@@ -1,5 +1,5 @@
 const axios = require('axios');
-require('dotenv').config;
+
 
 const getTextMessageInput = (recipient, template) => {
     return JSON.stringify({
@@ -20,12 +20,12 @@ const axiosCall = (data) => {
         method: 'post',
         url: `https://graph.facebook.com/${process.env.VERSION}/${process.env.PHONE_NUMBER_ID}/messages`,
         headers: {
-        'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
-        'Content-Type': 'application/json'
+          'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
+          'Content-Type': 'application/json'
         },
         data: data
     };
-
+    console.log(config.url)
   return(axios(config));
 }
 
